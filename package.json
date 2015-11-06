@@ -1,0 +1,24 @@
+{
+  "name": "express-todo-app",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sf-wdi-24/express-todo-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sf-wdi-24/express-todo-app/issues"
+  },
+  "homepage": "https://github.com/sf-wdi-24/express-todo-app",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "handlebars": "^4.0.4"
+  }
+}
