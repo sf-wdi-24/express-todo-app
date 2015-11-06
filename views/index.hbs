@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+  <title>Express To Do App</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">To Do List</h1>
+        <br>
+        <form id="create-todo">
+          <div class="form-group">
+            <input type="text" name="task" class="form-control" placeholder="Task" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="description" class="form-control" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-block btn-primary" value="Save">
+          </div>
+        </form>
+        <br>
+        <div id="todos-list">
+          
+          <!-- handlebars template -->
+          <script id="todos-template" type="text/x-handlebars-template">
+            \{{#each todos}}
+              <div class="todo" data-id="\{{_id}}">
+                <div class="row">
+
+                  <!-- todo details -->
+                  <p><strong>Task:</strong> \{{task}}</p>
+                  <p><strong>Description:</strong> \{{description}}</p>
+
+                  <!-- edit button to toggle form -->
+                  <a href="javascript:void(0)" class="btn btn-default btn-sm edit-todo" data-toggle="collapse" data-target="#update-\{{_id}}">
+                    <span class="glyphicon glyphicon-pencil"></span> Edit
+                  </a>
+                  
+                  <!-- delete button -->
+                  <a href="javascript:void(0)" class="btn btn-default btn-sm delete-todo">
+                    <span class="glyphicon glyphicon-trash"></span> Delete
+                  </a>
+                  
+                  <!-- form to update todo -->
+                  <div class="collapse" id="update-\{{_id}}">
+                    <br>
+                    <form class="update-todo">
+                      <div class="form-group">
+                        <input type="text" name="task" class="form-control" placeholder="Task" value="\{{task}}" autofocus>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="description" class="form-control" placeholder="Description" value="\{{description}}">
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" class="btn btn-block btn-default" value="Update">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            \{{/each}}
+          </script>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- jquery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- handlebars -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>

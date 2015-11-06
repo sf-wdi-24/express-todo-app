@@ -9,16 +9,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
-// set view engine to ejs
-// app.set('view engine', 'ejs');
+// set view engine to hbs (handlebars)
+app.set('view engine', 'hbs');
 
 
 // pre-seeded todo data; our "database" is an array for now
 var todos = [
-  {id: 1, task: 'Laundry', description: 'Clean clothes'},
-  {id: 2, task: 'Grocery Shopping', description: 'Buy dinner for this week'},
-  {id: 3, task: 'Homework', description: 'Make this app super awesome!'}
+  { _id: 1, task: 'Laundry', description: 'Clean clothes' },
+  { _id: 2, task: 'Grocery Shopping', description: 'Buy dinner for this week' },
+  { _id: 3, task: 'Homework', description: 'Make this app super awesome!' }
 ];
+
+
+// HOMEPAGE ROUTE
+
+app.get('/', function (req, res) {
+  res.render('index');
+});
 
 
 // API ROUTES
@@ -36,9 +43,9 @@ app.post('/api/todos', function (req, res) {
   
   // set sequential id (last id in `todos` array + 1)
   if (todos.length > 0) {
-    newTodo.id = todos[todos.length - 1].id + 1;
+    newTodo._id = todos[todos.length - 1]._id + 1;
   } else {
-    newTodo.id = 1;
+    newTodo._id = 1;
   }
 
   // add newTodo to `todos` array
@@ -98,6 +105,7 @@ app.delete('/api/todos/:id', function (req, res) {
   // send back deleted todo
   res.json(todoToDelete);
 });
+
 
 // listen on port 3000
 app.listen(3000, function() {

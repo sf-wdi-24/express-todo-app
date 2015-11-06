@@ -19,6 +19,6 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "handlebars": "^4.0.4"
+    "hbs": "^4.0.0"
   }
 }
