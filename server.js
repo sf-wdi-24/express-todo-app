@@ -62,7 +62,7 @@ app.get('/api/todos/:id', function (req, res) {
 
   // find todo to by its id
   var foundTodo = todos.filter(function (todo) {
-    return todo.id == todoId;
+    return todo._id == todoId;
   })[0];
 
   // send foundTodo as JSON response
@@ -76,7 +76,7 @@ app.put('/api/todos/:id', function (req, res) {
 
   // find todo to update by its id
   var todoToUpdate = todos.filter(function (todo) {
-    return todo.id == todoId;
+    return todo._id == todoId;
   })[0];
 
   // update the todo's task
@@ -96,7 +96,7 @@ app.delete('/api/todos/:id', function (req, res) {
 
   // find todo to delete by its id
   var todoToDelete = todos.filter(function (todo) {
-    return todo.id == todoId;
+    return todo._id == todoId;
   })[0];
   
   // remove todo from `todos` array

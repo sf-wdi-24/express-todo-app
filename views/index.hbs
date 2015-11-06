@@ -15,12 +15,23 @@
   <title>Express To Do App</title>
 </head>
 <body>
+
+  <!-- header -->
+  <div class="well">
+    <div class="container">
+      <div class="page-header">
+        <h1>To Do <small>get it done!</small></h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- page content -->
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">To Do List</h1>
-        <br>
-        <form id="create-todo">
+      <div class="col-md-12">
+        
+        <!-- new phrase form-->
+        <form class="form-inline" id="create-todo">
           <div class="form-group">
             <input type="text" name="task" class="form-control" placeholder="Task" autofocus>
           </div>
@@ -28,54 +39,56 @@
             <input type="text" name="description" class="form-control" placeholder="Description">
           </div>
           <div class="form-group">
-            <input type="submit" class="btn btn-block btn-primary" value="Save">
+            <input type="submit" class="btn btn-default" value="Add To Do">
           </div>
         </form>
         <br>
-        <div id="todos-list">
+
+        <!-- list of todos -->
+        <ul class="list-group" id="todos-list">
           
           <!-- handlebars template -->
           <script id="todos-template" type="text/x-handlebars-template">
             \{{#each todos}}
-              <div class="todo" data-id="\{{_id}}">
-                <div class="row">
+              <li class="list-group-item todo" data-id="\{{_id}}">
 
-                  <!-- todo details -->
-                  <p><strong>Task:</strong> \{{task}}</p>
-                  <p><strong>Description:</strong> \{{description}}</p>
+                <!-- todo label (task) -->
+                <span class="label label-default">\{{task}}</span>
+                
+                <!-- phrase description -->
+                \{{description}}
 
+                <div class="pull-right">
                   <!-- edit button to toggle form -->
-                  <a href="javascript:void(0)" class="btn btn-default btn-sm edit-todo" data-toggle="collapse" data-target="#update-\{{_id}}">
-                    <span class="glyphicon glyphicon-pencil"></span> Edit
+                  <a href="javascript:void(0)" data-toggle="collapse" data-target="#update-\{{_id}}" class="edit-pencil">
+                    <span class="glyphicon glyphicon-pencil"></span>
                   </a>
                   
                   <!-- delete button -->
-                  <a href="javascript:void(0)" class="btn btn-default btn-sm delete-todo">
-                    <span class="glyphicon glyphicon-trash"></span> Delete
-                  </a>
-                  
-                  <!-- form to update todo -->
-                  <div class="collapse" id="update-\{{_id}}">
-                    <br>
-                    <form class="update-todo">
-                      <div class="form-group">
-                        <input type="text" name="task" class="form-control" placeholder="Task" value="\{{task}}" autofocus>
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="description" class="form-control" placeholder="Description" value="\{{description}}">
-                      </div>
-                      <div class="form-group">
-                        <input type="submit" class="btn btn-block btn-default" value="Update">
-                      </div>
-                    </form>
-                  </div>
+                  <button class="close right-side delete-todo" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                <hr>
-              </div>
+                
+                <!-- form to update todo -->
+                <div class="collapse" id="update-\{{_id}}">
+                  <br>
+                  <form class="form-inline update-todo">
+                    <div class="form-group">
+                      <input type="text" name="task" class="form-control" placeholder="Task" value="\{{task}}">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="description" class="form-control" placeholder="Description" value="\{{description}}">
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-block btn-default" value="Update">
+                    </div>
+                  </form>
+                </div>
+              </li>
             \{{/each}}
           </script>
-        
-        </div>
+        </ul>
       </div>
     </div>
   </div>
