@@ -1,8 +1,7 @@
 // require express and other modules
 var express = require('express'),
     app = express(),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
+    bodyParser = require('body-parser');
 
 // configure bodyParser (for receiving form data)
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,13 +24,13 @@ var todos = [
 // API ROUTES
 
 // get all todos
-app.get('/todos', function (req, res) {
+app.get('/api/todos', function (req, res) {
   // send all todos as JSON response
   res.json({ todos: todos });
 });
 
 // create new todo
-app.post('/todos', function (req, res) {
+app.post('/api/todos', function (req, res) {
   // create new todo with form data (`req.body`)
   var newTodo = req.body;
   
@@ -50,7 +49,7 @@ app.post('/todos', function (req, res) {
 });
 
 // get one todo
-app.get('/todos/:id', function (req, res) {
+app.get('/api/todos/:id', function (req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
@@ -64,7 +63,7 @@ app.get('/todos/:id', function (req, res) {
 });
 
 // update todo
-app.put('/todos/:id', function (req, res) {
+app.put('/api/todos/:id', function (req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
@@ -84,7 +83,7 @@ app.put('/todos/:id', function (req, res) {
 });
 
 // delete todo
-app.delete('/todos/:id', function (req, res) {
+app.delete('/api/todos/:id', function (req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
