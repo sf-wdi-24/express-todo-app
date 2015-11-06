@@ -64,11 +64,7 @@ app.get('/api/todos/:id', function (req, res) {
   // find todo in db by id
   Todo.findOne({ _id: todoId }, function (err, foundTodo) {
     if (err) {
-      if (err.name === "CastError") {
-        res.status(404).json({ error: "Nothing found by this ID." });
-      } else {
-        res.status(500).json({ error: err.message });
-      }
+      res.status(500).json({ error: err.message });
     } else {
       res.json(foundTodo);
     }
