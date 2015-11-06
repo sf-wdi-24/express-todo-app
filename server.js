@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 
 // pre-seeded todo data; our "database" is an array for now
 var todos = [
-  { _id: 1, task: 'Laundry', description: 'Clean clothes' },
+  { _id: 1, task: 'Laundry', description: 'Wash clothes' },
   { _id: 2, task: 'Grocery Shopping', description: 'Buy dinner for this week' },
   { _id: 3, task: 'Homework', description: 'Make this app super awesome!' }
 ];

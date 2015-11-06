@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
   "homepage": "https://github.com/sf-wdi-24/express-todo-app",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "chai": "^3.4.0",
     "express": "^4.13.3",
-    "hbs": "^4.0.0"
+    "hbs": "^4.0.0",
+    "mocha": "^2.3.3",
+    "request": "^2.65.0"
   }
 }
