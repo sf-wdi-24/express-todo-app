@@ -15,6 +15,12 @@
   * Delete an existing todo
 4. Make sure to take advantage of Bootstrap for a good UX.
 
+## Bonus
+
+In addition to being able to update and delete a todo, build a way for a user to mark a todo as "done". You'll need:
+  * A styling change on the client to indicate the todo is "done" (this should be persistent if the user refreshes the page)
+  * A request (AJAX) to mark the todo as done (update it) on the server
+
 ## Submission
 
 * As you make code changes, frequently commit and push to GitHub.
