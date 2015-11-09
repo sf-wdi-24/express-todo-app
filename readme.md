@@ -5,7 +5,7 @@
 ## Getting Started
 
 1. Fork this repo, and clone it into your `develop` folder on your local machine.
-2. Follow the challenges from the <a href="https://github.com/sf-wdi-24/modules/tree/master/week-03-resetful-server-express/day-03" target="_blank">CRUD Server Routes </a> modules. By the end of the challenges, **you should have:**
+2. Follow the challenges from the <a href="https://github.com/sf-wdi-24/modules/tree/master/week-03-restful-server-express/day-03" target="_blank">CRUD Server Routes </a> modules. By the end of the challenges, **you should have:**
   * A RESTful API with server routes to "CRUD" todos
   * Request specs for each of your API routes
 3. Once your API is finished, build a client for your app. **A user should be able to:**
