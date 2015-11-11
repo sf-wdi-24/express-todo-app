@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'test';
-
 var request = require('request'),
     expect = require('chai').expect,
     baseUrl = 'http://localhost:3000';
