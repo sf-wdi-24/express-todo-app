@@ -26,7 +26,7 @@ describe('Todos', function() {
     );
   });
 
-  it('should list a SINGLE todo on GET /api/todo/:id', function (done) {
+  it('should list a SINGLE todo on GET /api/todos/:id', function (done) {
     request(baseUrl + '/api/todos', function (error, response, body) {
       var allTodos = JSON.parse(body).todos;
       var singleTodo = allTodos[allTodos.length - 1];
